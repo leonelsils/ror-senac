@@ -1,0 +1,29 @@
+<h1>Lista de Produtos</h1>
+
+<% if flash[:notice] %>
+<div class="alert alert-success">
+  <%= flash[:notice] %>
+</div>
+<% end %>
+
+<%= link_to "Novo produto", new_product_path, class: "btn btn-primary" %>
+
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>Nome</th>
+    <th>Data de Nascimento</th>
+    <th></th>
+  </tr>
+  <% @products.each do |product| %>
+  <tr>
+    <td><%= product.id %></td>
+    <td><%= product.name %></td>
+    <td><%= product.price %></td>
+  </tr>
+  <% end %>
+</table>
+
+<div class="row">
+  <%= will_paginate @products %>
+</div>

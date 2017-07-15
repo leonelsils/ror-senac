@@ -109,7 +109,8 @@ html, body, #wrapper{
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #fff;
+  background: #ccc;
+  margin: 0 30px;
 }
 
 #footer {
@@ -118,4 +119,10 @@ html, body, #wrapper{
   padding: 10px 0;
   background-color: #000;
   color: #fff;
+}
+
+.form-control {
+  border-radius: 0;
+  border:0;
+  background: #e8f5e9;
 }

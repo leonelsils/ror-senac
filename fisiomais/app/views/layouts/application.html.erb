@@ -27,6 +27,8 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
+                            <li class="<%= "active" if current_page?(root_path) %>"><%= link_to "Início", root_path %></li>
+                            <li class="<%= "active" if current_page?(products_path) %>"><%= link_to "Produtos", products_path %></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clientes <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -85,8 +87,8 @@
             </div>
         </main>
         <footer id="footer">
-            <div class="container">
-                <p class="text-muted">Place sticky footer content here.</p>
+            <div class="container-fluid">
+                <p class="text-muted">Ⓒ Cinica Fisiomais. Todos os direitos reservados </p>
             </div>
         </footer>
     </div>

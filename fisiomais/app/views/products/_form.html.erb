@@ -1,0 +1,43 @@
+<% if @product.errors.any? %>
+<h2><%= @product.errors.count %> erros encontrado ao salvar produto:</h2>
+
+<ul>
+  <% @product.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
+
+<%= form_for @product, html: { class: 'form-horizontal' } do |f| %>
+
+<div class="form-group">
+  <%= f.label :name, "Nome", class: "col-sm-3 control-label" %>
+  <div class="col-sm-4">
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :price, "Price", class: "col-sm-3 control-label" %>
+  <div class="col-sm-4">
+    <%= f.text_field :price, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :status, "Status", class: "col-sm-3 control-label" %>
+  <div class="col-sm-2">
+    <%= f.check_box :status, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-12">
+    <%= f.submit "Salvar", class: "btn btn-primary" %>
+    <%= link_to "Voltar", products_path, class: "btn btn-default" %>
+  </div>
+</div>
+
+<% end %>
