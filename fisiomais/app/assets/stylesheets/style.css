@@ -3,6 +3,7 @@
   border-color: #33691E;
   border-radius: 0;
   margin-bottom: 0;
+  border:none; 
 }
 .navbar-default .navbar-brand {
   color: #fff;
