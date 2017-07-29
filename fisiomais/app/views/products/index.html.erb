@@ -1,31 +1,48 @@
 <h1>Lista de Produtos</h1>
 
 <% if flash[:notice] %>
-<div class="alert alert-success">
+<div class="alert alert-success" id="alert">
   <%= flash[:notice] %>
 </div>
 <% end %>
 
-<%= link_to "Novo produto", new_product_path, class: "btn btn-primary" %>
+<div class="row">
+  <div class="col-sm-12">
+    <%= link_to  new_product_path, class: "btn btn-success pull-right" do %>
+      <i class="glyphicon glyphicon-plus"></i> Cadastrar
+    <% end %>
+  </div>
+</div>
 
-<table class="table table-striped">
-  <tr>
-    <th>#</th>
-    <th>Nome</th>
-    <th>Preço Custo</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% @products.each do |product| %>
-  <tr>
-    <td><%= product.id %></td>
-    <td><%= product.name %></td>
-    <td><%= product.price %></td>
-    <td><%= link_to "Editar", edit_product_path(product.id) %></td>
-    <td><%= link_to "Ver detalhes", product_path(product.id) %></td>
-  </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="col-sm-12">
+  <br>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Preço Custo</th>
+        <th>Preço Venda</th>
+        <th>Situação</th>
+        <th></th>
+      </tr>
+      <% @products.each do |product| %>
+      <tr class="<%= (product.status)? 'line-grid':'line-danger' %>">
+        <td><%= product.id %></td>
+        <td><%= link_to product.name, product_path(product.id) %></td>
+        <td><%= product.price_cost %></td>
+        <td><%= product.price_sale %></td>
+        <td><%= (product.status)? 'Ativo':'Inativo' %></td>
+        <td>
+          <%= link_to edit_product_path(product.id) do %>
+            <i class="glyphicon glyphicon-edit"></i> editar
+          <% end %>    
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 
 <div class="row">
   <%= will_paginate @products %>

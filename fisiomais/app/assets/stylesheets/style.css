@@ -126,3 +126,25 @@ html, body, #wrapper{
   border:0;
   background: #e8f5e9;
 }
+
+#alert{
+  transition: all 20s;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  z-index: 2;
+  width: 25%;
+}
+
+.line-grid,
+.line-grid a {
+  color: #000;
+  font-weight: 900;
+}
+
+.line-danger, 
+.line-danger a{
+
+  color: #ff0000;
+  font-weight: 900;
+}

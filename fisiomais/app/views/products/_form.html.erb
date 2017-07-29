@@ -20,14 +20,21 @@
 </div>
 
 <div class="form-group">
-  <%= f.label :price, "Price", class: "col-sm-3 control-label" %>
+  <%= f.label :price, "Preço de Custo", class: "col-sm-3 control-label" %>
   <div class="col-sm-4">
-    <%= f.text_field :price, class: 'form-control' %>
+    <%= f.text_field :price_cost, class: 'form-control' %>
   </div>
 </div>
 
 <div class="form-group">
-  <%= f.label :status, "Status", class: "col-sm-3 control-label" %>
+  <%= f.label :price, "Preço de Venda", class: "col-sm-3 control-label" %>
+  <div class="col-sm-4">
+    <%= f.text_field :price_sale, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :status, "Ativo", class: "col-sm-3 control-label" %>
   <div class="col-sm-2">
     <%= f.check_box :status, class: 'form-control' %>
   </div>

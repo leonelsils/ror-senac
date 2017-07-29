@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   	post 	'products' 				=> 'products#create'
   	get 	'products/new' 			=> 'products#new', 		as: :new_product
   	get 	'product/:id/edit'	 	=> 'products#edit', 	as: :edit_product
-  	get 	'author/:id' 			=> 'products#show',		as: :product
+  	get 	'product/:id' 			=> 'products#show',		as: :product
 	patch 	'product/:id' 			=> 'products#update'
 
   	root :to => 'welcome#index'
