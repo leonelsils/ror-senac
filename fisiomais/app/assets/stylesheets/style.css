@@ -109,7 +109,7 @@ html, body, #wrapper{
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #ccc;
+  background: #f7f7f7;
   margin: 0 30px;
 }
 

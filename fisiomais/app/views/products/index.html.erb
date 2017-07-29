@@ -12,7 +12,8 @@
   <tr>
     <th>#</th>
     <th>Nome</th>
-    <th>Data de Nascimento</th>
+    <th>Preço Custo</th>
+    <th></th>
     <th></th>
   </tr>
   <% @products.each do |product| %>
@@ -20,6 +21,8 @@
     <td><%= product.id %></td>
     <td><%= product.name %></td>
     <td><%= product.price %></td>
+    <td><%= link_to "Editar", edit_product_path(product.id) %></td>
+    <td><%= link_to "Ver detalhes", product_path(product.id) %></td>
   </tr>
   <% end %>
 </table>
