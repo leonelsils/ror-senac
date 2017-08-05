@@ -11,7 +11,7 @@
 <body>
     <div id="wrapper">
         <header>
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-inverse">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -29,7 +29,7 @@
                         <ul class="nav navbar-nav">
                             <li class="<%= "active" if current_page?(root_path) %>"><%= link_to "Início", root_path %></li>
                             <li class="<%= "active" if current_page?(products_path) %>">
-                                <%= link_to  products_path, class: "btn btn-success pull-right" do %>
+                                <%= link_to  products_path, class: "" do %>
                                     <i class="glyphicon glyphicon-gift"></i> Produtos
                                 <% end %>
                             </li>
@@ -46,30 +46,7 @@
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produtos <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fotos <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
+                            
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
