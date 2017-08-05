@@ -28,7 +28,12 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="<%= "active" if current_page?(root_path) %>"><%= link_to "Início", root_path %></li>
-                            <li class="<%= "active" if current_page?(products_path) %>"><%= link_to "Produtos", products_path %></li>
+                            <li class="<%= "active" if current_page?(products_path) %>">
+                                <%= link_to  products_path, class: "btn btn-success pull-right" do %>
+                                    <i class="glyphicon glyphicon-gift"></i> Produtos
+                                <% end %>
+                            </li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clientes <span class="caret"></span></a>
                                 <ul class="dropdown-menu">

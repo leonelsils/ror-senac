@@ -98,6 +98,7 @@
 
 html, body, #wrapper{
   height: 100%;
+  background: #fafafa;
 }
 
 #wrapper {
@@ -109,8 +110,14 @@ html, body, #wrapper{
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #f7f7f7;
-  margin: 0 30px;
+}
+
+#main .container {
+  background: #fff;
+  min-height: 100%;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.75);
 }
 
 #footer {
