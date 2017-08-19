@@ -46,13 +46,6 @@
       <%= f.text_area :description, class: 'form-control' %>
     </div>
   </div>
-</div>
-
-<div class="col-sm-6">
-
-<div class="img-resposive">
-  <%= image_tag @product.photo_url, class: "img-responsive" if @product.photo? %>
-</div>
   
   <div class="form-group">
     <%= f.label :photo, "Foto", class: "col-sm-3 control-label" %>
@@ -60,6 +53,15 @@
       <%= f.file_field :photo %>
     </div>
   </div>
+</div>
+
+<div class="col-sm-6">
+
+  <div class="img-resposive">
+    <%= image_tag @product.photo_url, class: "img-responsive" if @product.photo? %>
+  </div>
+  
+
 </div>
 
 <div class="form-group">

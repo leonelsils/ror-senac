@@ -1,0 +1,38 @@
+#login-container {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #673AB7;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #512DA8, #673AB7);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: #fff;
+}
+
+#login-container label {font-weight: 300;}
+#login-container input[type=input] {
+	
+}
+#login-container input[type=submit] {
+	background: #512DA8;
+	color: #fff;
+	padding: 8px 16px;
+	border: 0;
+	border-radius: 30px;
+	width: 100%;
+	margin: 10px 0;
+	border: none;
+	border: 1px solid #fff;
+}
+#login-container input[type=submit]:hover {
+	color: #fff;
+	border: 1px solid #512DA8;
+}
+#login-container a ,
+#login-container a:active {
+	text-decoration: none;
+	color: #fff;
+
+}

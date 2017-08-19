@@ -98,7 +98,7 @@
 
   html, body, #wrapper{
     height: 100%;
-    background: #fafafa;
+    background: #e8f5e9;
   }
 
   #wrapper {
@@ -113,11 +113,11 @@
   }
 
   #main .container {
-    background: #fff;
+    background: #fafafa;
     min-height: 100%;
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.75);
+    /*-webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.75);*/
   }
 
   .page-header {
@@ -137,8 +137,6 @@
 
   .form-control {
     border-radius: 0;
-    border:0;
-    background: #e8f5e9;
   }
 
   #alert{
@@ -175,14 +173,12 @@
     flex-direction: column;
     justify-content: center;
     transition: all 600ms;
--webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
--moz-box-shadow:    0px 0px 4px 0px rgba(0, 0, 0, 0.2);
-box-shadow:         0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    background: #fff;
   }
 
   .card-product img {
-    margin: 10px auto;
-
+    margin: 10px;
+    border: 1px solid #fafafa; 
   }
 
   .card-product .info {

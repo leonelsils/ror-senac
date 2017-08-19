@@ -1,10 +1,19 @@
+
 <div class="page-header">
   <h1>Lista de Produtos</h1>
-  <div class="text-right">
-    
-  <%= link_to  new_product_path, class: "btn btn-success" do %>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <input type="text" name="serch" placeholder="Pesquisar por nome" class="form-control">
+  </div>
+  <div class="col-sm-6 text-right">
+    <%= link_to  new_product_path, class: "btn btn-success" do %>
     <i class="glyphicon glyphicon-plus"></i> Cadastrar
-  <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-12">
+    <hr>
   </div>
 </div>
 
@@ -15,26 +24,31 @@
 <% end %>
 
 <div class="row">
-  <% @products.each do |product| %>
-  <div class="col-sm-6 col-xs-12 col-md-3 col-lg-3">
-  <div class="card-product">
-      <img src="<%= product.photo.url(:medium) %>" class="img-responsive">
-      <div class="info">
-        <h5><%= link_to product.name, product_path(product.id) %></h5>
-        <p> Código: <%= product.id %></p>
-        <p> Custo: R$<%= product.price_cost %></p>
-        <p> Venda: R$<%= product.price_sale %></p>
-        <p class="status <%= (product.status)? 'line-success':'line-danger' %>"><%= (product.status)? 'Ativo':'Inativo' %></p>
-      </div>
-      <div class="footer">
-        <%= link_to edit_product_path(product.id) do %>
-        <i class="glyphicon glyphicon-edit"></i> editar
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Status</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+        <tr class="<%= (product.status)? 'line-grid':'line-danger' %>">
+          <td><%= product.id %></td>
+          <td><%= product.name %></td>
+          <td><%= (product.status)? 'Ativo':'Inativo' %></td>
+          <td><%= link_to edit_product_path(product.id) do %>
+            <i class="glyphicon glyphicon-edit"></i> editar
+            <% end %>
+          </td>
+        </tr>
         <% end %>
-      </div>
-    </div>
+      </tbody>
+    </table>
   </div>
-  <% end %>
-  
 </div>
 
 <div class="row">

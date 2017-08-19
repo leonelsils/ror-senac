@@ -1,4 +1,4 @@
-class WelcomeController < ApplicationController
+class WelcomeController < CoreController
   def index
   end
 end
