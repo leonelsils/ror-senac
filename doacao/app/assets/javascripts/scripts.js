@@ -1,4 +1,4 @@
-jQuery(function(){
+/*jQuery(function(){
 
     $('#camera_wrap').camera({
         height: '30%',
@@ -8,4 +8,4 @@ jQuery(function(){
         opacityOnGrid: false,
     });
 
-});
+});*/

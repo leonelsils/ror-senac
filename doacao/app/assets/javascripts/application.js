@@ -17,8 +17,9 @@
 
 //= require materialize-sprockets
 
+
+
 //= require camera.min
 //= require jquery.mobile.customized.min
 //= require jquery.easing.1.3
 //= require scripts
-

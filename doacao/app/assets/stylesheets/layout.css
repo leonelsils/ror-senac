@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #09f;
+}
+a:hover {
+    text-decoration: none;
+}
+#back_to_camera {
+    background: rgba(255,255,255,.9);
+    clear: both;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+.fluid_container {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+#camera_wrap_4 {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin-bottom: 0!important;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.camera_bar {
+    z-index: 2;
+}
+.camera_thumbs {
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+}
+.camera_thumbs_cont {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+.camera_overlayer {
+    opacity: .1;
+}
+
+.camera_wrap {
+    float: none;
+}
+.camera_wrap img {
+    width: 100%;
+    background-size: 100% 100%;
+
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 34px;
+    line-height: 48px;
+    margin: 0;
+    font-weight: 900;
+    color: #fff;
+}
+
+.header {
+    height: 280px;
+    background-image: image_url("bg-top2.jpg");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    color: #fff;
+}
+
+.header .toolbar {
+    margin-bottom: 20px;
+    background:#000;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1em;
+}
+.header .toolbar .login {
+
+}
+.header .toolbar a{
+    color: #fff;
+    margin: 0 10px;
+}
+.header .toolbar a:hover{
+    opacity: .8;
+}
+
+menu ul {
+    display: flex;
+    flex-direction: row;
+}
+menu ul li a {
+    display: block;
+    padding: 11px 20px 29px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 900;
+    color: #fff;
+}
