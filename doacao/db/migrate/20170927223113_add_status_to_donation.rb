@@ -1,0 +1,5 @@
+class AddStatusToDonation < ActiveRecord::Migration[5.1]
+  def change
+    add_column :donations, :status, :integer
+  end
+end

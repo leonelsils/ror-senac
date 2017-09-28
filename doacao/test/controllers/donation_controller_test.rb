@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class DoacaoControllerTest < ActionDispatch::IntegrationTest
+class DonationControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get doacao_index_url
+    get donation_index_url
     assert_response :success
   end
 
