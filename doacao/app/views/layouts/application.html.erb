@@ -9,7 +9,12 @@
 
 <body>
   <div id="wrapper">
-
+    <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <header class="header">
       <div class="toolbar black">
 
@@ -17,8 +22,16 @@
           <div class="row">
             <div class="col s12">
               <div class="login">
-                <a href="#">cadastrar</a>
-                <a href="#">login</a>
+                <p class="navbar-text pull-right">
+                  <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                  <% else %>
+                  <%= link_to "cadastrar", new_user_registration_path, :class => 'navbar-link'  %> |
+                  <%= link_to "login", new_user_session_path, :class => 'navbar-link'  %>
+                  <% end %>
+                  </p>
               </div>
             </div>
           </div>
@@ -44,7 +57,7 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse green-text text-darken-4"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><%= link_to "Início", root_path,  class: "green-text text-darken-4" %></li>
-            <li><%= link_to "Doações", donations_path,  class: "green-text text-darken-4" %></li>
+            <li><%= link_to "Animais para Doações", donations_path,  class: "green-text text-darken-4" %></li>
             <li><a class="green-text text-darken-4" href="collapsible.html">Contato</a></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
@@ -57,34 +70,16 @@
     </nav>
     <main>
       <div class="container">
-            <%= yield %>
+        <%= yield %>
       </div>
     </main>
 
-    <footer class="page-footer grey darken-3">
+    <footer class="page-footer green darken-4">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Company Bio</h5>
-            <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Settings</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Connect</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
+          <div class="col s12">
+            <h5 class="white-text center">ANIMAIS PARA DOAÇÃO</h5>
+            <p class="grey-text text-lighten-4">Como a principal organização de bem-estar animal na área, o Animal Shelter está transformando a maneira como as pessoas se preocupam com animais em todo os BRASIL.</p>
           </div>
         </div>
       </div>
