@@ -50,24 +50,7 @@
         </div>
       </div>
     </header>
-    <nav>
-      <div class="nav-wrapper grey lighten-3 ">
-        <div class="container">
-          <a href="#!" class="brand-logo"></a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse green-text text-darken-4"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><%= link_to "Início", root_path,  class: "green-text text-darken-4" %></li>
-            <li><%= link_to "Animais para Doações", donations_path,  class: "green-text text-darken-4" %></li>
-            <li><a class="green-text text-darken-4" href="collapsible.html">Contato</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><%= link_to "Início", root_path,  class: "green-text text-darken-4" %></li>
-            <li><%= link_to "Doações", donations_path,  class: "green-text text-darken-4" %></li>
-            <li><a class="green-text text-darken-4" href="collapsible.html">Contato</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+   <%= render "shared/menu" %>
     <main>
       <div class="container">
         <%= yield %>

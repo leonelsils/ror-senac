@@ -117,8 +117,8 @@ p{
     font-family: sans-serif;
 }
 .logo h1 {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 2rem;
+    line-height: 30px;
     margin: 0;
     font-weight: 900;
     color: #fff;
@@ -126,7 +126,7 @@ p{
 .logo p {
     color: #fff;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 menu ul {
     display: flex;
