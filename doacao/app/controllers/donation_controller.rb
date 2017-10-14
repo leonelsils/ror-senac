@@ -1,7 +1,9 @@
 class DonationController < ApplicationController
-  
-  def index
-  end
+
+  # def index
+  #   @donations = Donation.paginate(:page => params[:page], :per_page => 6)
+  # end
+
 
   def new
   	@donation = Donation.new
@@ -17,8 +19,12 @@ class DonationController < ApplicationController
     end
   end
 
+  def show
+    @donation = Donation.find(params[:id])
+  end
+
   def donation_params
-	params.require(:donation).permit(:name, :porte, :type, :status, :category)
+	 params.require(:donation).permit(:name, :porte, :type, :status, :category_id)
   end
 
 

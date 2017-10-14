@@ -9,77 +9,34 @@
 <% end %>
 
 <div class="row">
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-        <label for="first_name">Nome Completo</label>
-      </div>
-      <div class="input-field col s6">
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name">Last Name</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-        <label for="disabled">Disabled</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
-        <label for="password">Password</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
-        <label for="email">Email</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
-        This is an inline input field:
-        <div class="input-field inline">
-          <input id="email" type="email" class="validate">
-          <label for="email" data-error="wrong" data-success="right">Email</label>
+  <div class="col s12">
+    <div class="card-panel">
+
+      <div class="row">
+        <%= simple_form_for @donation, html: { class: 'col s12' } do |f| %>
+        
+        <div class="input-field col s12">
+          <%= f.input :name, :class => 'validate', placeholder: 'Nome' %>
         </div>
+
+        <div class="input-field col s6">
+          <%= f.input :porte, include_blank: 'Selecione o Porte', collection:Donation.portes.keys, as: :select, label: false, :class => 'green-text text-darken-4'%>
+        </div>
+
+        <div class="input-field col s6">
+          <%= f.input :sex, include_blank: 'Selecione o Sexo', collection:Donation.sexes.keys, as: :select, label: false, :class => 'green-text text-darken-4'  %>
+        </div>
+
+        <div class="input-field col s12">
+          <%= f.association :category,  include_blank: 'Selecione o Tipo', label: false, :class => 'green-text text-darken-4' %>
+        </div>
+
+        <div class="col s12">
+          <%= f.submit "Salvar", class: 'btn green darken-4' %>
+        </div>
+        <% end %>
       </div>
     </div>
-  </form>
-</div>
-
-<%= simple_form_for @donation, html: { class: 'form-horizontal' } do |f| %>
-<div class="row">
-
-  <div class="input-field col s12">
-    <%= f.input :name, label: false, id: 'name', class: 'validate', placeholder: 'Placeholder'  %>
-    <label for="name">Nome</label>
   </div>
-
-  <div class="input-field col s12">
-    <%= f.input :porte, include_blank: 'Selecione o Porte', collection:Donation.portes, as: :select, label: false %>
-    <label></label>
-  </div>
-
-  <div class="input-field col s12">
-    <%= f.input :sex, include_blank: 'Selecione o Sexo', collection:Donation.sexes, as: :select, label: false  %>
-    <label></label>
-  </div>
-
-  <div class="input-field col s12">
-    <%= f.association :category, include_blank: 'Selecione o Tipo', label: false%>
-    <label></label>
-  </div>
-
-  <div class="form-group">
-    <div class="col s12">
-      <%= f.submit "Salvar", class: 'btn green darken-4' %>
-    </div>
-  </div>
-  <% end %>
-
-  <div class="col s12"><br><br><br></div>
 </div>
 

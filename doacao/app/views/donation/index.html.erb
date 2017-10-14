@@ -2,104 +2,36 @@
 
  <%= render "shared/sidebar" %>
  <div class="col s12 m9 l9">
+
+    <div class="col s12">
+      <h2 class="title-page">Animais para doação</h2>
+      <p class="subtitle-page">Encontre um animal que se encaixe com seu perfil</p>
+    </div>
+
+    <% @donations.each do |donation| %>
+
+    <div class="col s12 m4 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="<%= image_url('img01.jpg') %>">
+        </div>
+        <div class="card-content">
+          <span class="card-title"><%= donation.name %></span>
+          <p><b>Sexo:</b> <%= donation.sex %></p>
+          <p><b>Porte:</b> <%= donation.porte %></p>
+        </div>
+        <div class="card-action">
+           <%= link_to "Mais destalhes", donation_path(donation.id), class: 'green-text text-darken-4' %>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+  
+
   <div class="col s12">
-    <h2 class="title-page">Animais para doação</h2>
-    <p class="subtitle-page">Encontre um animal que se encaixe com seu perfil</p>
-  </div>
-  <div class="col s12 m4 l4">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= image_url('img01.jpg') %>">
-      </div>
-      <div class="card-content">
-        <span class="card-title">Nome do Animal</span>
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-      </div>
-      <div class="card-action">
-        <a href="#" class="green-text text-darken-4">mais detalhes </a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col s12 m4 l4">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= image_url('img02.jpg') %>">
-      </div>
-      <div class="card-content">
-        <span class="card-title">Nome do Animal</span>
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-      </div>
-      <div class="card-action">
-        <a href="#" class="green-text text-darken-4">mais detalhes </a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col s12 m4 l4">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= image_url('img03.jpg') %>">
-      </div>
-      <div class="card-content">
-        <span class="card-title">Nome do Animal</span>
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-      </div>
-      <div class="card-action">
-        <a href="#" class="green-text text-darken-4">mais detalhes </a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col s12 m4 l4">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= image_url('img04.jpg') %>">
-      </div>
-      <div class="card-content">
-        <span class="card-title">Nome do Animal</span>
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-      </div>
-      <div class="card-action">
-        <a href="#" class="green-text text-darken-4">mais detalhes </a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col s12 m4 l4">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= image_url('img04.jpg') %>">
-      </div>
-      <div class="card-content">
-        <span class="card-title">Nome do Animal</span>
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-      </div>
-      <div class="card-action">
-        <a href="#" class="green-text text-darken-4">mais detalhes </a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col s12 m4 l4">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= image_url('img04.jpg') %>">
-      </div>
-      <div class="card-content">
-        <span class="card-title">Nome do Animal</span>
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-      </div>
-      <div class="card-action">
-        <a href="#" class="green-text text-darken-4">mais detalhes </a>
-      </div>
-    </div>
-
+    PAGINAÇÂO
+    <%= will_paginate @donations %>
   </div>
 
 </div>

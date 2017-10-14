@@ -3,6 +3,6 @@ class Donation < ApplicationRecord
 
     validates_presence_of :name, message: "Não pode ser vazio"
 
-    enum porte: [:little, :medio, :big]
-    enum sex: [:male, :female]
+    enum porte: [:PEQUENO, :MEDIO, :GRANDE]
+    enum sex: [:MACHO, :FEMEA]
 end

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get 'donations' => 'donation#index'
-  get 'donation/new' => 'donation#new', as: :new_donation
+  
+  get 	'donations' => 'welcome#index', as: :donations
+  post 	'donations' => 'donation#create'
+  get 	'donation/new', as: :new_donation
+  get 	'donation/:id' => 'donation#show', as: :donation
 
   root to:  'welcome#index'
 end
