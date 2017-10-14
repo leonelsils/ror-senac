@@ -203,3 +203,51 @@ main{
     color: #555;
 }
 
+
+
+
+.pagination {
+    font-size: 12px;
+    text-transform: lowercase;
+}
+
+.pagination > * {
+    margin-right: 0.1em;
+    padding: 0.3em 0.4em;
+}
+
+.pagination a {
+    padding: 13px 15px;
+    color: #000;
+    font-size: 16px;
+}
+
+
+.pagination a:hover {
+    background: #1b5e20 none repeat scroll 0 0;
+    text-shadow: 1px 1px 1px #171717;
+    color: #fff;
+}
+
+.pagination a:active {
+    text-shadow: none;
+}
+
+.pagination .current {
+    background: #1b5e20 none repeat scroll 0 0;
+    color: white;
+    text-shadow: 1px 1px 1px #171717;
+    padding: 13px 15px;
+}
+
+.pagination .disabled {
+    color: #C0C0C0;
+}
+
+.material-icons {
+    font-size: 1em; 
+}
+
+.error {
+    color: #b71c1c;
+}

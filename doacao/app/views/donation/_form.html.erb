@@ -1,5 +1,5 @@
 <% if @donation.errors.any? %>
-<h2><%= @donation.errors.count %> erros encontrado ao salvar Doação:</h2>
+<p><%= @donation.errors.count %> erros encontrado ao salvar Doação:</p>
 
 <ul>
   <% @donation.errors.full_messages.each do |message| %>
@@ -16,7 +16,7 @@
         <%= simple_form_for @donation, html: { class: 'col s12' } do |f| %>
         
         <div class="input-field col s12">
-          <%= f.input :name, :class => 'validate', placeholder: 'Nome' %>
+          <%= f.input :name, include_blank: '', label: 'Nome Completo' %>
         </div>
 
         <div class="input-field col s6">
@@ -27,11 +27,25 @@
           <%= f.input :sex, include_blank: 'Selecione o Sexo', collection:Donation.sexes.keys, as: :select, label: false, :class => 'green-text text-darken-4'  %>
         </div>
 
-        <div class="input-field col s12">
-          <%= f.association :category,  include_blank: 'Selecione o Tipo', label: false, :class => 'green-text text-darken-4' %>
+        <div class="input-field col s6">
+          <%= f.association :category,  include_blank: 'Selecione a categoria', label: false, :class => 'green-text text-darken-4' %>
+        </div>
+
+        <div class="input-field col s6">
+          <%= f.input :age,  include_blank: '', label: 'Qual a idade?', :class => 'green-text text-darken-4' %>
+        </div>
+        
+        <div class="input-field col s6">
+          <%= f.file_field :photo %>
+        </div>
+        
+        <div class="input-field col s6">
+          <%= image_tag @donation.photo_url, class: '' if @donation.photo? %>
         </div>
 
         <div class="col s12">
+          <br>
+          <%= link_to 'Cancelar', donations_path, :class => 'waves-effect  red lighten-5 btn text-red darken-4' %>
           <%= f.submit "Salvar", class: 'btn green darken-4' %>
         </div>
         <% end %>
