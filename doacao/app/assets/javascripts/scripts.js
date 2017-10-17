@@ -9,7 +9,11 @@ $( document ).ready(function(){
         });
 
     });
-*/
+    */
     $(".button-collapse").sideNav();
     $('select').material_select();
+
+    setTimeout(function(){
+    	$('.alert').hide('slow');
+    }, 4000);
 })

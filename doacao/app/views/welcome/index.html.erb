@@ -11,28 +11,29 @@
   <div class="alert alert-success" id="alert">
     <%= flash[:notice] %>
   </div>
+  <% end %>
 
   <% @donations.each do |donation| %>
 
-  <div class="col s12 m4 l4">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= @donation.photo_url %>" class="">
-      </div>
-      <div class="card-content">
-        <span class="card-title"><%= donation.name %></span>
-        <p><b>Sexo:</b> <%= donation.sex %></p>
-        <p><b>Porte:</b> <%= donation.porte %></p>
-        <p><b>Idade:</b> <%= donation.age %></p>
-        <p><b>Idade:</b> <%= donation.age %></p>
-      </div>
-      <div class="card-action">
-       <%= link_to "Mais destalhes", donation_path(donation.id), class: 'green-text text-darken-4' %>
+    <div class="col s12 m4 l4">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag donation.photo_url, class: "" if donation.photo? %>
+        </div>
+        <div class="card-content">
+          <span class="card-title"><%= donation.name %></span>
+          <p><b>Sexo:</b> <%= donation.sex %></p>
+          <p><b>Porte:</b> <%= donation.porte %></p>
+          <p><b>Idade:</b> <%= donation.age %></p>
+          <p><b>Idade:</b> <%= donation.age %></p>
+        </div>
+        <div class="card-action">
+         <%= link_to "Mais destalhes", donation_path(donation.id), class: 'green-text text-darken-4' %>
+       </div>
      </div>
-   </div>
 
- </div>
- <% end %>
+   </div>
+   <% end %>
 
  <div class="col s12">
   <br>
